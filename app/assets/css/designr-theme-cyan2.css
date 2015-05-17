@@ -79,8 +79,8 @@ h1 {
 
 h1.section-title{
     position:relative;
-    margin:0 0 124px;
-    font-size:48px;
+    margin:0 0 0px;
+    font-size:24px;
     line-height:64px;
     font-weight:300;
     text-align:center;
@@ -104,7 +104,7 @@ h1.section-title{
 }
 
 h2 {
-    font-size:21px;
+    font-size:18px;
     line-height:24px;
     font-weight:bold;
     text-transform:uppercase;
@@ -216,7 +216,7 @@ body {
 .navbar-brand:active,
 .navbar-brand:focus {
     padding:0 10px;
-    font-size:30px;
+    font-size:24px;
     line-height:30px;
     font-weight:normal;
     height:auto;
@@ -224,7 +224,7 @@ body {
 }
 
 .navbar-brand span {
-    font-size:24px;
+    font-size:18px;
     font-weight:300;
 }
 
@@ -255,7 +255,7 @@ body {
 }
 
 #main-nav .container{
-    padding:30px 20px;
+    padding:20px 72px;
     -webkit-transition:padding 0.5s ease-out;
     transition:padding 0.5s ease-out;
 }
@@ -268,7 +268,7 @@ body {
 #main-nav .nav a:active,
 #main-nav .nav a:hover{
     padding:0px 10px;
-    font-size:18px;
+    font-size:16px;
     line-height:54px;
     font-weight:400;
     background:transparent;
@@ -384,13 +384,13 @@ header.jumbotron{
     display:inline-block;
     margin:0;
     padding:18px 5px 12px 30px;
-    font-size:38px;
+    font-size:32px;
     font-weight:300;
     line-height:48px;
 }
 
 .jumbotron .left-col p span{
-    font-size:42px;
+    font-size:36px;
     font-weight:400;
 }
 
@@ -398,7 +398,7 @@ header.jumbotron{
     display:inline-block;
     margin:0;
     padding:10px 30px 10px 5px;
-    font-size:110px;
+    font-size:90px;
     line-height:110px;
     font-weight:900;
     text-transform:uppercase;
@@ -425,7 +425,7 @@ header.jumbotron{
 #services{
     background:#fff;
     color:#999;
-    padding:80px 0;
+    padding:12px 0;
 }
 
 #services .row.line {
@@ -452,7 +452,7 @@ header.jumbotron{
     width:160px;
     height:160px;
     text-align:center;
-    font-size:72px;
+    font-size:48px;
     line-height:130px;
     color:#ccc;
     background:none;
@@ -533,12 +533,12 @@ header.jumbotron{
 #about {
     background:#74C7D5;
     color:#fff;
-    padding:80px 0;
+    padding:40px 0;
 }
 
 #about h1 {
     color:#fff;
-    font-size:36px;
+    font-size:28px;
     line-height:42px;
     font-weight:300;
     margin-bottom:24px;
@@ -561,11 +561,12 @@ header.jumbotron{
     text-decoration:none;
 }
 
+/*
 #about img {
     box-shadow:12px 0px 0px 12px rgba(255,255,255,0.2),
                 -12px 0px 0px 12px rgba(255,255,255,0.2);
 }
-
+*/
 /*-----------------------
 ------Skills Styles-------
 ------------------------*/
@@ -1096,12 +1097,12 @@ header.jumbotron{
 #contact {
     background:transparent;
     color:#fff;
-	padding:80px 0;
+	padding:20px 0;
 }
 
 #contact .section-title {
     color:#fff;
-    margin-bottom:84px;
+    margin-bottom:24px;
 }
 
 #contact .section-title [class*=fa]{
@@ -1342,6 +1343,40 @@ header.jumbotron{
     font-weight:300;
 }
 
+/*-----------------------
+------About Styles-------
+------------------------*/
+
+#donate {
+    background:#74C7D5;
+    color:#fff;
+    padding:40px 0;
+}
+
+#donate h1 {
+    color:#fff;
+    font-size:28px;
+    line-height:42px;
+    font-weight:300;
+    margin-bottom:24px;
+    position:relative;
+}
+
+#donate p {
+    font-size:24px;
+    line-height:36px;
+    font-weight:300;
+    margin-bottom:42px;
+}
+
+#donate a:hover{
+    text-decoration:underline;
+}
+
+#donate .btn-theme.transparent {
+    font-size:18px;
+    text-decoration:none;
+}
 
 /*------------------------
 ---Scrolling animations---
