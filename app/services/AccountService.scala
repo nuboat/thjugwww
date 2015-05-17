@@ -8,7 +8,7 @@ object AccountService{
 
 	val account: TableQuery[Account] = TableQuery[Account]
 
-	def addAccount(acc:AccountPOST) = {
+	def addAccount(acc:AccountPOSTRequest) = {
 	
 		val db = Database.forURL("jdbc:h2:mem:hello", driver = "org.h2.Driver")
 		db.withSession { implicit session =>
@@ -22,7 +22,7 @@ object AccountService{
 	}
 	
 	//Using this form when use postgresql
-	/*def addAccount(acc:AccountPOST) = {
+	/*def addAccount(acc:AccountPOSTRequest) = {
 	
 		val db = Database.forURL("jdbc:postgresql://localhost/thjug?user=postgres&password=q1w2e3r4maniacgroup", driver = "org.postgresql.Driver")
 		db.withSession { implicit session =>
