@@ -1,4 +1,10 @@
-This is your new Play application
+THJUG.com
 =================================
+This website implement with Play Framework 2.3.9 + Scala.
+
+
+```Start
+bin/thjug -Dhttp.port=80 -Djava.net.preferIPv4Stack=true & disown
+```
 
 This file will be packaged with your application, when using `activator dist`.
