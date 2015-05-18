@@ -6,7 +6,7 @@ import slick.driver.PostgresDriver
 
 object AccountService{
 
-	val account: TableQuery[Account] = TableQuery[Account]
+	val account: TableQuery[Accounts] = TableQuery[Accounts]
 
 	def addAccount(acc:AccountPOSTRequest) = {
 	
@@ -16,7 +16,7 @@ object AccountService{
 			account.ddl.create
 			
 			// insert account instances
-			account += (account.list.length+1,acc.name,acc.email,acc.mobile)
+			account.map(a => (a.name, a.email,a.mobile)) += (acc.name,acc.email,acc.mobile)
 			println(account.list)
 		}
 	}
@@ -26,7 +26,9 @@ object AccountService{
 	
 		val db = Database.forURL("jdbc:postgresql://localhost/thjug?user=postgres&password=q1w2e3r4maniacgroup", driver = "org.postgresql.Driver")
 		db.withSession { implicit session =>
-			account += (account.list.length+1,acc.name,acc.email,acc.mobile)
+	
+			account.map(a => (a.name, a.email,a.mobile)) += (acc.name,acc.email,acc.mobile)
+	
 			println(account.list)
 		}
 	}*/
