@@ -7,6 +7,7 @@ import services._
 import models._
 import play.api.data.Form
 import play.api.data.Forms._
+import views.RequestForms.Pattern._
 
 @Singleton
 case class Application @Inject() () extends Controller {
@@ -19,23 +20,23 @@ case class Application @Inject() () extends Controller {
     Ok(views.html.example())
   }
 
-  val accountForm: Form[AccountPOSTRequest] = Form {
-  	mapping(
-      "contactName" -> text,
-	  "email" -> text,
-	  "mobileno" -> text
-  	)(AccountPOSTRequest.apply)(AccountPOSTRequest.unapply)
-  }
-
   def register = Action {implicit request =>
-	accountForm.bindFromRequest.fold(
+	registerForm.bindFromRequest()(request).fold(
 		formWithErrors => {
-			println("Error")
+			println("Error:"+formWithErrors)
 			Ok(views.html.index("Your new application is ready."))
 		},
 		accountData => {
-			AccountService.addAccount(accountData)
-			Ok(views.html.index("Your new application is ready."))
+			AccountService.addAccount(accountData._1,accountData._2,accountData._3) match{
+				case None => {
+					println("Can not register")
+					Ok(views.html.index("Your new application is ready."))
+				}
+				case account => {
+					println("Account added")
+					Ok(views.html.index("Your new application is ready."))
+				}
+			}
 		}
 	)
   }
