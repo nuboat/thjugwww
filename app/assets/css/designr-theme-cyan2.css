@@ -398,7 +398,7 @@ header.jumbotron{
     display:inline-block;
     margin:0;
     padding:10px 30px 10px 5px;
-    font-size:90px;
+    font-size:80px;
     line-height:110px;
     font-weight:900;
     text-transform:uppercase;
@@ -1090,6 +1090,42 @@ header.jumbotron{
     text-decoration:none;
 }
 
+
+/*-----------------------
+------Schedule Styles-------
+------------------------*/
+
+#schedule {
+    background:#74C7D5;
+    color:#fff;
+    padding:40px 0;
+}
+
+#schedule h1 {
+    color:#fff;
+    font-size:28px;
+    line-height:42px;
+    font-weight:300;
+    margin-bottom:24px;
+    position:relative;
+}
+
+#schedule p {
+    font-size:24px;
+    line-height:36px;
+    font-weight:300;
+    margin-bottom:42px;
+}
+
+#schedule a:hover{
+    text-decoration:underline;
+}
+
+#schedule .btn-theme.transparent {
+    font-size:18px;
+    text-decoration:none;
+}
+
 /*----------------------
 -----Contact Styles-----
 ------------------------*/
@@ -1344,7 +1380,7 @@ header.jumbotron{
 }
 
 /*-----------------------
-------About Styles-------
+------Donate Styles-------
 ------------------------*/
 
 #donate {
