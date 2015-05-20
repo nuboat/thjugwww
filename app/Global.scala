@@ -11,6 +11,7 @@ object Global extends GlobalSettings {
 
   val applicationModule = new AbstractModule with ScalaModule {
     protected def configure() {
+		//bind(classOf[TextGenerator]).to(classOf[WelcomeTextGenerator])
     }
   }
 

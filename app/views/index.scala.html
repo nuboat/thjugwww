@@ -144,7 +144,7 @@ MAIN NAV
                 </ul>
             </div>
 
-            <form id="contact-form" class="col-sm-7 scrollimation fade-left" action="register" method="post"
+            <form id="contact-form" class="col-sm-7 scrollimation fade-left" action="@routes.Application.register()" method="post"
                   novalidate>
                 <div class="form-group">
                     <label class="control-label" for="contact-name">Name</label>
@@ -191,7 +191,7 @@ MAIN NAV
                 </div-->
                 <p>
                     <button name="submit" type="submit" class="btn btn-theme btn-lg" data-error-message="Error!"
-                            data-sending-message="Sending..." data-ok-message="Message Sent" disabled><i
+                            data-sending-message="Sending..." data-ok-message="Message Sent" ><i
                             class="fa fa-paper-plane"></i>Submit
                     </button>
                 </p>
