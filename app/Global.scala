@@ -1,5 +1,6 @@
-import com.google.inject.AbstractModule
-import controllers.PlayJector
+import com.google.inject.{Guice, AbstractModule}
+import com.google.inject.matcher.Matchers
+import intercept.{LoggingInterceptor, Logging}
 import net.codingwell.scalaguice.ScalaModule
 import play.api.GlobalSettings
 
@@ -14,8 +15,14 @@ object Global extends GlobalSettings {
     }
   }
 
-  PlayJector.initial(applicationModule)
+  val loggingModule = new AbstractModule with ScalaModule {
+    protected def configure(): Unit = {
+      bindInterceptor(Matchers.any(), Matchers.annotatedWith(classOf[Logging]), new LoggingInterceptor)
+    }
+  }
 
-  override def getControllerInstance[A](c: Class[A]): A = PlayJector.instance(c)
+  val injector = Guice.createInjector(applicationModule, loggingModule)
+
+  override def getControllerInstance[A](c: Class[A]): A = injector.getInstance(c)
 
 }

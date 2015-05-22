@@ -1,3 +1,4 @@
+// scalastyle:off
 package controllers
 
 import javax.inject.{Inject, Singleton}
@@ -6,7 +7,7 @@ import play.api._
 import play.api.mvc._
 
 @Singleton
-case class Application @Inject() () extends Controller {
+case class Application @Inject()() extends Controller {
 
   def index = Action {
     Ok(views.html.index("Your new application is ready."))
@@ -21,3 +22,4 @@ case class Application @Inject() () extends Controller {
   }
 
 }
+// scalastyle:off
