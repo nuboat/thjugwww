@@ -1,22 +1,13 @@
 package services
 
-import models.Account._
-import scala.slick.driver.H2Driver.simple._
-import slick.driver.PostgresDriver
-import DatabaseService._
+import models.Account.Account
 
-object AccountService{
+/**
+ *
+ * Created by nuboat
+ */
+trait AccountService {
 
-	def addAccount(name:String,email:String,mobile:String):Option[Account] = {
-		db.withSession { implicit session =>
-			insertAccount(name,email,mobile)
-		}
-	}
+  def addAccount(name: String, email: String, mobile: String): Option[Account]
 
-	//Using this form when use postgresql
-	/*def addAccount(name:String,email:String,mobile:String):Option[Account] = {
-		db.withSession { implicit session =>
-			insertAccount(name,email,mobile)
-		}
-	}*/
 }

@@ -1,8 +1,15 @@
 package services
 
-import scala.slick.driver.H2Driver.simple._
+import javax.inject.Singleton
 
-object DatabaseService{
-	val db = Database.forURL("jdbc:h2:mem:hello", driver = "org.h2.Driver")
-	//val db = Database.forURL("jdbc:postgresql://localhost/thjug?user=postgres&password=q1w2e3r4maniacgroup", driver = "org.postgresql.Driver")
+
+import scala.slick.jdbc.JdbcBackend
+import scala.slick.jdbc.JdbcBackend.DatabaseDef
+
+@Singleton
+class DatabaseService {
+
+  //val getDatabaseDef: DatabaseDef = Database.forURL("jdbc:h2:mem:hello", driver = "org.h2.Driver")
+
+  val getDatabaseDef: DatabaseDef = JdbcBackend.Database.forURL("jdbc:postgresql://db.thjug.com/thjug?user=thjug&password=", driver = "org.postgresql.Driver")
 }
