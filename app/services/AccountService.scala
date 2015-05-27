@@ -1,6 +1,7 @@
 package services
 
-import models.Account.Account
+import models.slick.Account
+import Account.Account
 
 /**
  *
@@ -8,6 +9,6 @@ import models.Account.Account
  */
 trait AccountService {
 
-  def addAccount(name: String, email: String, mobile: String): Option[Account]
+  def addAccount(name: String, email: String, mobile: String, level: Int): Option[Account]
 
 }

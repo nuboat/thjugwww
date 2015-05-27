@@ -1,19 +1,23 @@
+// scalastyle:off
 package controllers
 
 import javax.inject.{Inject, Singleton}
+
 import play.api._
 import play.api.mvc._
 import services._
-import models._
-import play.api.data.Form
-import play.api.data.Forms._
 import views.RequestForms.Pattern._
 
+/**
+ *
+ * Created by nuboat
+ * Contribute by Pongthep
+ */
 @Singleton
 case class Application @Inject()(accountService: AccountService) extends Controller {
 
   def index = Action {
-    Ok(views.html.index("Your new application is ready."))
+    Ok(views.html.index(""))
   }
 
   def example = Action {
@@ -24,20 +28,22 @@ case class Application @Inject()(accountService: AccountService) extends Control
     registerForm.bindFromRequest()(request).fold(
       formWithErrors => {
         println("Error:" + formWithErrors)
-        Ok(views.html.index("Your new application is ready."))
+        Ok(views.html.index(""))
       },
       accountData => {
-        accountService.addAccount(accountData._1, accountData._2, accountData._3) match {
+        accountService.addAccount(accountData._1, accountData._2, accountData._3, accountData._4.toInt) match {
           case None => {
-            println("Can not register")
-            Ok(views.html.index("Your new application is ready."))
+            Logger.info(s"Account ${accountData} cannot register")
+            Ok(views.html.index(""))
           }
           case account => {
-            println("Account added")
-            Ok(views.html.index("Your new application is ready."))
+            Logger.info(s"Account ${accountData} registerd")
+            Ok(views.html.index(""))
           }
         }
       }
     )
   }
 }
+
+// scalastyle:off

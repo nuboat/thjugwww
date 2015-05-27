@@ -1,8 +1,9 @@
-import com.google.inject.AbstractModule
-import controllers.PlayJector
+import com.google.inject.matcher.Matchers
+import com.google.inject.{AbstractModule, Guice}
+import intercept.{Logging, LoggingInterceptor}
 import net.codingwell.scalaguice.ScalaModule
 import play.api.GlobalSettings
-import services.{SlickAccountService, AccountService}
+import services.slick.SlickModule
 
 /**
  *
@@ -10,14 +11,14 @@ import services.{SlickAccountService, AccountService}
  */
 object Global extends GlobalSettings {
 
-  val applicationModule = new AbstractModule with ScalaModule {
-    protected def configure() {
-      bind[AccountService].to[SlickAccountService]
+  val loggingModule = new AbstractModule with ScalaModule {
+    protected def configure(): Unit = {
+      bindInterceptor(Matchers.any(), Matchers.annotatedWith(classOf[Logging]), new LoggingInterceptor)
     }
   }
 
-  PlayJector.initial(applicationModule)
+  val injector = Guice.createInjector(SlickModule(), loggingModule)
 
-  override def getControllerInstance[A](c: Class[A]): A = PlayJector.instance(c)
+  override def getControllerInstance[A](c: Class[A]): A = injector.getInstance(c)
 
 }
