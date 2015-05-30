@@ -1285,6 +1285,10 @@ header.jumbotron{
     font-weight:400;
 }
 
+#contact-form select.form-control {
+    text-indent: 56px;
+}
+
 /*----------------------
 -----Footer Styles-----
 ------------------------*/
