@@ -1,9 +1,0 @@
-CREATE SEQUENCE user_id_seq;
-
-CREATE TABLE account(
-	user_id	bigint NOT NULL UNIQUE default nextval('user_id_seq'),
-	user_name	VARCHAR(260) NOT NULL UNIQUE,
-	email	VARCHAR(100) NOT NULL,
-	mobile	VARCHAR(100) NOT NULL,
-	CONSTRAINT account_user_id_pkey PRIMARY KEY (user_id)
-);

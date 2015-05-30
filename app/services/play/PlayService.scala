@@ -6,8 +6,8 @@ import play.api.Configuration
 import play.api.Play.current
 import services.ConfigService
 
-
 /**
+ *
  * Created by nuboat
  */
 @Singleton

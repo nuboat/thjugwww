@@ -19,7 +19,7 @@ class SlickAccountServiceSpec extends FlatSpec with Matchers {
     result.isEmpty should be(false)
   }
 
-  "SlickAccountService.addAccount with new userid" should
+  "SlickAccountService.addAccount with exist userid" should
     "cannot insert and result is empty" in new WithApplication {
 
     val service = TestJector.instance[SlickAccountService]

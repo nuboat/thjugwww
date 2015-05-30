@@ -5,6 +5,7 @@ import net.codingwell.scalaguice.ScalaModule
 import services.{ConfigService, AccountService}
 
 /**
+ *
  * Created by nuboat
  */
 case class PlayModule() extends AbstractModule with ScalaModule {
