@@ -1,8 +1,10 @@
-import com.google.inject.{Guice, AbstractModule}
 import com.google.inject.matcher.Matchers
-import intercept.{LoggingInterceptor, Logging}
+import com.google.inject.{AbstractModule, Guice}
+import intercept.{LoggingModule, Logging, LoggingInterceptor}
 import net.codingwell.scalaguice.ScalaModule
 import play.api.GlobalSettings
+import services.play.PlayModule
+import services.slick.SlickModule
 
 /**
  *
@@ -10,18 +12,7 @@ import play.api.GlobalSettings
  */
 object Global extends GlobalSettings {
 
-  val applicationModule = new AbstractModule with ScalaModule {
-    protected def configure() {
-    }
-  }
-
-  val loggingModule = new AbstractModule with ScalaModule {
-    protected def configure(): Unit = {
-      bindInterceptor(Matchers.any(), Matchers.annotatedWith(classOf[Logging]), new LoggingInterceptor)
-    }
-  }
-
-  val injector = Guice.createInjector(applicationModule, loggingModule)
+  val injector = Guice.createInjector(SlickModule(), LoggingModule(), PlayModule())
 
   override def getControllerInstance[A](c: Class[A]): A = injector.getInstance(c)
 

@@ -1,21 +1,7 @@
-New log file opened at Sat May 16 15:23:39 ICT 2015 by 28170@C02NC1XCG3QT
-Taking next connection to: 54221
-New client attempting to connect on port: 54222-54221
-  Address = /192.168.43.112:54221
-Handshake exception on socket: 54222
-sbt.impl.ipc.HandshakeException: Unable to perform handshake
-	at sbt.impl.ipc.Peer.handshake(IPC.scala:46)
-	at sbt.impl.ipc.MultiClientServer.<init>(IPC.scala:150)
-	at sbt.server.SbtServerSocketHandler$$anon$1.run(SbtServerSocketHandler.scala:43)
-Caused by: java.io.EOFException
-	at java.io.DataInputStream.readInt(DataInputStream.java:392)
-	at sbt.impl.ipc.Peer.receive(IPC.scala:95)
-	at sbt.impl.ipc.Peer.handshake(IPC.scala:49)
-	... 2 more
-Taking next connection to: 54221
-Checking to see if clients are empty...
-No non-daemon clients connected after 3 min. Shutting down.
-Server socket thread exiting.
-0 clients open, will close them...
-All client sockets have been closed.
-Closing the 28170@C02NC1XCG3QT logs at Sat May 16 15:26:40 ICT 2015, goodbye.
+New log file opened at Fri May 22 10:54:01 ICT 2015 by 22828@C02NC1XCG3QT
+Taking next connection to: 53181
+New client attempting to connect on port: 53182-53181
+  Address = /172.16.100.1:53181
+This client on port 53182 has uuid 4c5ff101-613f-4950-b3d2-b8a9c284660a configName activator humanReadableName Activator protocolVersion 1 featureTags Vector()
+Connected Clients: activator-4c5ff101-613f-4950-b3d2-b8a9c284660a
+Taking next connection to: 53181

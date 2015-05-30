@@ -7,6 +7,7 @@ import java.lang.annotation.Target;
 
 
 /**
+ * <p>
  * There is no support for runtime annotation in Scala, so far
  * Java interfaces need to be used.
  *

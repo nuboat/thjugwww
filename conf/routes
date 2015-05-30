@@ -4,5 +4,9 @@ GET     /example                    @controllers.Application.example
 
 POST    /register                   @controllers.Application.register
 
+
+GET     /account/:id                controllers.Api.getAccount(id: String)
+GET     /echo/:text                 controllers.Api.echo(text: String)
+
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)
