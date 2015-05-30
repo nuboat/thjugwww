@@ -15,7 +15,7 @@ class SlickAccountServiceSpec extends FlatSpec with Matchers {
     "insert with no exception and result is not empty" in new WithApplication {
 
     val service = TestJector.instance[SlickAccountService]
-    val result = service.addAccount(userid.toString, "nuboat", "nb@thjug.com")
+    val result = service.addAccount(userid.toString, "nuboat", "nb@thjug.com", 1)
     result.isEmpty should be(false)
   }
 
@@ -23,7 +23,7 @@ class SlickAccountServiceSpec extends FlatSpec with Matchers {
     "cannot insert and result is empty" in new WithApplication {
 
     val service = TestJector.instance[SlickAccountService]
-    val result = service.addAccount(userid.toString, "nuboat", "nb@thjug.com")
+    val result = service.addAccount(userid.toString, "nuboat", "nb@thjug.com", 1)
     result.isEmpty should be(true)
   }
 

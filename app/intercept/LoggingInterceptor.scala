@@ -11,7 +11,7 @@ import play.api.Logger
  *
  * Created by nuboat
  */
-class LoggingInterceptor extends MethodInterceptor {
+private class LoggingInterceptor extends MethodInterceptor {
 
   val log = Logger("metrix")
 
@@ -22,11 +22,6 @@ class LoggingInterceptor extends MethodInterceptor {
 
     try {
       invocation.proceed()
-    } catch {
-      case t: Throwable => {
-        log.error(t.getMessage)
-        throw t
-      }
     } finally {
       val elapsed = watch.stop.elapsed(TimeUnit.MILLISECONDS)
       log.info(s"""${className}.${methodName}, Execution in ${elapsed} ms.""")

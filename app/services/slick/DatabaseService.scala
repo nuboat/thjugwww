@@ -13,12 +13,12 @@ import scala.slick.jdbc.JdbcBackend.DatabaseDef
  * Contribute by nuboat
  */
 @Singleton
-class DatabaseService @Inject()(val config: ConfigService) {
+private class DatabaseService @Inject()(val config: ConfigService) {
 
-  private val url = config.getString("db.default.url")
-  private val user = config.getString("db.default.user")
-  private val password = config.getString("db.default.password")
-  private val dbdriver = config.getString(" db.default.driver")
+  private val url = config.getString("db.default.url").getOrElse("")
+  private val user = config.getString("db.default.user").getOrElse("")
+  private val password = config.getString("db.default.password").getOrElse("")
+  private val dbdriver = config.getString(" db.default.driver").getOrElse("")
 
   private val fullurl = s"${url}?user=${user}&password=${password}"
 

@@ -14,7 +14,7 @@ import services.AccountService
  * Contribute by nuboat
  */
 @Singleton
-class SlickAccountService @Inject()(db: DatabaseService) extends AccountService {
+private class SlickAccountService @Inject()(db: DatabaseService) extends AccountService {
 
   def addAccount(name: String, email: String, mobile: String, level: Int): Option[Account] = {
     db.getDatabaseDef.withSession { implicit session =>
