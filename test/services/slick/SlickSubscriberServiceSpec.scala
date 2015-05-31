@@ -1,5 +1,6 @@
 package services.slick
 
+import define.JobLevel
 import org.scalatest.{FlatSpec, Matchers}
 import play.api.test.WithApplication
 import services.TestJector
@@ -15,7 +16,7 @@ class SlickSubscriberServiceSpec extends FlatSpec with Matchers {
     "insert with no exception and result is not empty" in new WithApplication {
 
     val service = TestJector.instance[SlickSubscriberService]
-    val result = service.addSubscriber("nuboat", s"nb$id@thjug.com", "0894446110", 1)
+    val result = service.addSubscriber("nuboat", s"nb$id@thjug.com", "0894446110", JobLevel.CLevel)
     result.isEmpty should be(false)
   }
 
@@ -23,7 +24,7 @@ class SlickSubscriberServiceSpec extends FlatSpec with Matchers {
     "cannot insert and result is empty" in new WithApplication {
 
     val service = TestJector.instance[SlickSubscriberService]
-    val result = service.addSubscriber("nuboat", s"nb$id@thjug.com", "0894446110", 1)
+    val result = service.addSubscriber("nuboat", s"nb$id@thjug.com", "0894446110", JobLevel.CLevel)
     result.isEmpty should be(true)
   }
 

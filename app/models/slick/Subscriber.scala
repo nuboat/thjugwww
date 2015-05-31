@@ -1,5 +1,7 @@
 package models.slick
 
+import define.JobLevel.JobLevel
+
 import scala.slick.driver.PostgresDriver.simple._
 
 /**
@@ -8,7 +10,7 @@ import scala.slick.driver.PostgresDriver.simple._
  */
 object Subscriber {
 
-  case class Subscriber(name: String, email: String, mobile: String, level: Int)
+  case class Subscriber(name: String, email: String, mobile: String, jobLevel: Int)
 
   val subscriber: TableQuery[Subscribers] = TableQuery[Subscribers]
 
@@ -19,13 +21,13 @@ object Subscriber {
 
     def mobile: Column[String] = column[String]("mobile")
 
-    def joblevel: Column[Int] = column[Int]("joblevel")
+    def jobLevel: Column[Int] = column[Int]("joblevel")
 
-    def * = (name, email, mobile, joblevel) <>(Subscriber.tupled, Subscriber.unapply)
+    def * = (name, email, mobile, jobLevel) <>(Subscriber.tupled, Subscriber.unapply)
   }
 
-  def insertSubscriber(name: String, email: String, mobile: String, joblevel: Int)(implicit session: Session): Option[Subscriber] = {
-    subscriber.map(a => (a.name, a.email, a.mobile, a.joblevel)) +=(name, email, mobile, joblevel)
+  def insertSubscriber(name: String, email: String, mobile: String, jobLevel: Int)(implicit session: Session): Option[Subscriber] = {
+    subscriber.map(a => (a.name, a.email, a.mobile, a.jobLevel)) +=(name, email, mobile, jobLevel)
     Some(subscriber.filter(_.email === email).first)
   }
 
