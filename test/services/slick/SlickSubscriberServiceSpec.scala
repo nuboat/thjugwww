@@ -27,8 +27,7 @@ class SlickSubscriberServiceSpec extends FlatSpec with Matchers {
 
     val service = TestJector.instance[SlickSubscriberService]
     val subscriber = Subscriber("nuboat", s"nb-async$id@thjug.com", "0000000000", JobLevel.Technical.id)
-    val future = service.addAsyncSubscriber(subscriber)
-    future.isCompleted should be(true)
+    service.addAsyncSubscriber(subscriber)
   }
 
   "SlickSubscriberService.addSubscriber with exist email" should
