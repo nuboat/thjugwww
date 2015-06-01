@@ -1,10 +1,10 @@
-@(message: String)
+@(message: String, jobLevels: List[GroupJobLevel])
 <!DOCTYPE html>
 <html lang="en-US" class="no-js">
 <head>
 
     <meta charset="utf-8">
-    <title>THJUG</title>
+    <title>THJUG - opensource community website</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
@@ -17,12 +17,10 @@
     <link rel="stylesheet" href="assets/css/flexslider.css">
     <link rel="stylesheet" href="assets/css/font-awesome.min.css">
     <link rel="stylesheet" href="assets/css/designr-theme-cyan2.css">
-
     <link href='http://fonts.googleapis.com/css?family=Lato:400,300,300italic,400italic,700,700italic,900'
           rel='stylesheet' type='text/css'>
 
     <script type="text/javascript" src="assets/js/libs/modernizr.min.js"></script>
-
 
     <script>
 		(function(i, s, o, g, r, a, m) {
@@ -40,8 +38,8 @@
 		ga('create', 'UA-44045724-1', 'thjug.com');
 		ga('send', 'pageview');
 
-
     </script>
+
 </head>
 
 <body data-spy="scroll" data-target="#main-nav" data-offset="200">
@@ -117,6 +115,8 @@ MAIN NAV
             </div>
         </div>
     </div>
+
+    <div id="container" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
 </section>
 
 <section id="schedule">
@@ -124,9 +124,10 @@ MAIN NAV
         <center>
             <div class="row" style="padding: 80px 0px 40px">
                 <p class="jumbo-text">Functional Programming</p>
+
                 <p class="jumbo-text">Meetup</p>
-                <p class="jumbo-text">COMING</p>
-                <p class="jumbo-text">SOON</p>
+
+                <p class="jumbo-text" style="color: #f05557;">COMING SOON</p>
             </div>
         </center>
     </div>
@@ -139,6 +140,7 @@ MAIN NAV
         <div class="row">
             <div class="col-sm-5 contact-info scrollimation fade-right">
                 <h2>Why we would like to know about you?</h2>
+
                 <p>
                     You don't miss any event that organize by us, If we can send email directly to you.
                 </p>
@@ -196,8 +198,8 @@ MAIN NAV
                         <i class="fa fa-group"></i>
                         <select id="contact-level" name="level" class="form-control requiredField">
                             <option value="0">Owner / Invester</option>
-                            <option value="1">C-Level</option>
-                            <option value="2">Management</option>
+                            <option value="1">C-Level / Management</option>
+                            <option value="2">Business Development</option>
                             <option value="3" selected>Technical / Operation</option>
                             <option value="4">Users</option>
                         </select>
@@ -219,41 +221,58 @@ MAIN NAV
 <section id="services">
     <div class="container">
         <h1 class="section-title scrollimation scale-in"><span>SPONSORS</span><!--i class="fa fa-wrench"></i--></h1>
+
         <div class="row">
             <div class="col-sm-3 col-sm-offset-1 scrollimation fade-right">
                 <h4>Voucher</h4>
+
                 <p style="font-size: 13px">Your logos on Java meetup.</p>
 
                 <h4>Silver - 8000 B</h4>
-                <p style="font-size: 13px">Your logos on Java meetup, thjug.com, and you can pitch for job openings after the speakers.</p>
+
+                <p style="font-size: 13px">Your logos on Java meetup, thjug.com, and you can pitch for job openings
+                    after the speakers.</p>
 
                 <h4>Gold - 15000 B</h4>
+
                 <p style="font-size: 13px">Your big size logos on Java meetup, Gold sponsor status on thjug.com,
                     short bio of your company on the web page with a link back to your site.</p>
 
                 <h4>Platinum - 40000 B</h4>
-                <p style="font-size: 13px">Your insanely big size logos on Java meetup, Platinum sponsor status on on thjug.com,
+
+                <p style="font-size: 13px">Your insanely big size logos on Java meetup, Platinum sponsor status on on
+                    thjug.com,
                     short bio of your company on the web page with link to your site, AND eternal gratitude.</p>
             </div>
             <div class="col-sm-7 col-sm-offset-1 scrollimation fade-left">
                 <p>If you guys can help us out a little bit, it would mean the world to us.
                     We are literally paying out of our own pockets now to help grow the community in Thailand,
                     and we can't do these events much longer on our own as they continue to grow so fast. </p>
+
                 <p>The tech scene in Bangkok is SCREAMING for developers and we drag them out from universities
-                    and every other cave they live in to get them to open their eyes and see how much the world has to offer them. </p>
+                    and every other cave they live in to get them to open their eyes and see how much the world has to
+                    offer them. </p>
+
                 <p>Just try to imagine all the things you take for granted that they might not even have heard about.
                     That thing might be YOUR service! </p>
+
                 <p>Most people have heard about "Cloud", "Big Data", and how important metrics are,
-                    but have they tried Appsignal, Mixpanel, intercom.io, or know about Microsoft's BizSpark program? </p>
-                <p>This is YOUR chance to reach the community in a city of 15 million people—with just a few hundred bucks
+                    but have they tried Appsignal, Mixpanel, intercom.io, or know about Microsoft's BizSpark
+                    program? </p>
+
+                <p>This is YOUR chance to reach the community in a city of 15 million people—with just a few hundred
+                    bucks
                     you can increase your client base in a place you hadn't even thought about yesterday!
-                    Please help us help you by raising awareness of your products. This is how we all thrive together! </p>
+                    Please help us help you by raising awareness of your products. This is how we all thrive
+                    together! </p>
             </div>
         </div>
         <div class="row">
             <div class="col-sm-offset-1">
-                <p style="font-size: 12px; color: #f05557; padding-left: 16px;">We need money for prizes, marketing of the conference, speakers' costs.
-                    This is a purely non-profit venture and all money is spent on developing Bangkok's technical expertise.</p>
+                <p style="font-size: 12px; color: #f05557; padding-left: 16px;">We need money for prizes, marketing of
+                    the conference, speakers' costs.
+                    This is a purely non-profit venture and all money is spent on developing Bangkok's technical
+                    expertise.</p>
             </div>
         </div>
     </div>
@@ -287,7 +306,7 @@ FOOTER
             <div class="col-sm-6 left-col">
                 <h1 class="small-logo">
                     <a href="https://github.com/nuboat/thjug">THJUG</a>
-                    <span>source code available on Github</span>
+                    <span>opensource community website</span>
                 </h1>
                 <ul class="footer-nav">
                     <li><a href="#home" class="scrollto">HOME</a></li>
@@ -323,6 +342,55 @@ FOOTER
 <script src="assets/js/jquery.backstretch.min.js"></script>
 <script src="assets/js/contact.js"></script>
 <script src="assets/js/designr.js"></script>
+<script src="assets/js/highcharts.js"></script>
+<script type="text/javascript">
+$(function () {
+
+    $(document).ready(function () {
+
+        // Build the chart
+        $('#container').highcharts({
+
+            chart: {
+                backgroundColor:'transparent',
+                plotBackgroundColor: null,
+                plotBorderWidth: null,
+                plotShadow: false
+            },
+            title: {
+                text: 'THJUG'
+            },
+            tooltip: {
+                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+            },
+            plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    dataLabels: {
+                        enabled: true
+                    },
+                    showInLegend: false
+                }
+            },
+            series: [{
+                type: 'pie',
+                name: 'User share',
+                data: [
+                @jobLevels.map { job =>
+                  ['@job.jobLevel.toString', @job.count],
+                }
+                    //['Owner / Investor', 0],
+                    //['C-Level / Management', 0],
+                    //['Business Development', 2],
+                    //['Technical / Operation', 13],
+                    //['User', 1]
+                ]
+            }]
+        });
+    });
+});
+    </script>
 </body>
 
 </html>

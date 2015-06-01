@@ -41,10 +41,11 @@ class SlickSubscriberServiceSpec extends FlatSpec with Matchers {
   }
 
   "SlickSubscriberService.groupJobLevel" should
-    "joblevel, count(1)" in new WithApplication {
+    "joblevel, count(1) should not empty" in new WithApplication {
 
     val service = TestJector.instance[SlickSubscriberService]
-    service.groupJobLevel()
+    val groupJobLevel = service.groupJobLevel()
+    groupJobLevel.isEmpty should be(false)
   }
 
 }

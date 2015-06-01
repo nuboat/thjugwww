@@ -17,8 +17,10 @@ import views.RequestForms.Pattern._
 @Singleton
 case class Application @Inject()(subscriberService: SubscriberService) extends Controller {
 
+  val hello = "Hello World!"
   def index = Action {
-    Ok(views.html.index(""))
+    val jobLevels = subscriberService.groupJobLevel()
+    Ok(views.html.index(hello, jobLevels))
   }
 
   def example = Action {
@@ -26,19 +28,21 @@ case class Application @Inject()(subscriberService: SubscriberService) extends C
   }
 
   def register = Action { implicit request =>
+    val jobLevels = subscriberService.groupJobLevel()
+
     registerForm
       .bindFromRequest()(request)
-      .fold(formWithErrors => Ok(views.html.index("")),
+      .fold(formWithErrors => Ok(views.html.index(hello, jobLevels)),
         subscriberData => {
           val subscriber = Subscriber(subscriberData._1, subscriberData._2, subscriberData._3, subscriberData._4.toInt)
           subscriberService.addSubscriber(subscriber) match {
             case None => {
               Logger.info(s"Subscriber ${subscriberData} cannot register")
-              Ok(views.html.index(""))
+              Ok(views.html.index(hello, jobLevels))
             }
             case subscriber => {
               Logger.info(s"Subscriber ${subscriberData} registerd")
-              Ok(views.html.index(""))
+              Ok(views.html.index(hello, jobLevels))
             }
           }
         }
