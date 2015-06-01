@@ -11,20 +11,20 @@ class SlickAccountServiceSpec extends FlatSpec with Matchers {
 
   val userid = System.currentTimeMillis()
 
-  "SlickAccountService.addAccount with new userid" should
-    "insert with no exception and result is not empty" in new WithApplication {
-
-    val service = TestJector.instance[SlickAccountService]
-    val result = service.addAccount(userid.toString, "nuboat", "nb@thjug.com", 1)
-    result.isEmpty should be(false)
-  }
-
-  "SlickAccountService.addAccount with exist userid" should
-    "cannot insert and result is empty" in new WithApplication {
-
-    val service = TestJector.instance[SlickAccountService]
-    val result = service.addAccount(userid.toString, "nuboat", "nb@thjug.com", 1)
-    result.isEmpty should be(true)
-  }
+//  "SlickAccountService.addAccount with new userid" should
+//    "insert with no exception and result is not empty" in new WithApplication {
+//
+//    val service = TestJector.instance[SlickAccountService]
+//    val result = service.addAccount(userid.toString, "nuboat", "nb@thjug.com", 1)
+//    result.isEmpty should be(false)
+//  }
+//
+//  "SlickAccountService.addAccount with exist userid" should
+//    "cannot insert and result is empty" in new WithApplication {
+//
+//    val service = TestJector.instance[SlickAccountService]
+//    val result = service.addAccount(userid.toString, "nuboat", "nb@thjug.com", 1)
+//    result.isEmpty should be(true)
+//  }
 
 }

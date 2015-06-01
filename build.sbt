@@ -11,7 +11,7 @@ libraryDependencies ++= Seq(
 )
 
 libraryDependencies ++= Seq(
-  "com.typesafe.slick" %% "slick" % "2.1.0",
+  "com.typesafe.slick" %% "slick" % "3.0.0",
   "net.codingwell" %% "scala-guice" % "4.0.0"
 )
 

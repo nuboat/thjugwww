@@ -1,7 +1,7 @@
 package services
 
 import define.JobLevel.JobLevel
-import models.slick.Subscriber.Subscriber
+import models.Subscriber
 
 /**
  *
@@ -9,6 +9,6 @@ import models.slick.Subscriber.Subscriber
  */
 trait SubscriberService {
 
-  def addSubscriber(email: String, fullname: String, mobile: String, jobLevel: JobLevel): Option[Subscriber]
+  def addSubscriber(subscriber: Subscriber): Option[Subscriber]
 
 }

@@ -3,7 +3,7 @@ package controllers
 
 import javax.inject.{Inject, Singleton}
 
-import define.JobLevel
+import models.Subscriber
 import play.api._
 import play.api.mvc._
 import services._
@@ -30,13 +30,13 @@ case class Application @Inject()(subscriberService: SubscriberService) extends C
       .bindFromRequest()(request)
       .fold(formWithErrors => Ok(views.html.index("")),
         subscriberData => {
-          val jobLevel = JobLevel(subscriberData._4.toInt)
-          subscriberService.addSubscriber(subscriberData._1, subscriberData._2, subscriberData._3, jobLevel) match {
+          val subscriber = Subscriber(subscriberData._1, subscriberData._2, subscriberData._3, subscriberData._4.toInt)
+          subscriberService.addSubscriber(subscriber) match {
             case None => {
               Logger.info(s"Subscriber ${subscriberData} cannot register")
               Ok(views.html.index(""))
             }
-            case account => {
+            case subscriber => {
               Logger.info(s"Subscriber ${subscriberData} registerd")
               Ok(views.html.index(""))
             }
