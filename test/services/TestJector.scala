@@ -3,7 +3,7 @@ package services
 import com.google.inject.{AbstractModule, Guice}
 import net.codingwell.scalaguice.ScalaModule
 import services.play.PlayModule
-import services.slick.{SlickModule, SlickAccountService}
+import services.slick.SlickModule
 
 /**
  * Created by nuboat

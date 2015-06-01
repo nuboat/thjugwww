@@ -2,7 +2,7 @@ package services.play
 
 import com.google.inject.AbstractModule
 import net.codingwell.scalaguice.ScalaModule
-import services.{ConfigService, AccountService}
+import services.ConfigService
 
 /**
  *
