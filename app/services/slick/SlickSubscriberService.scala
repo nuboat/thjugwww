@@ -46,7 +46,7 @@ private class SlickSubscriberService extends SubscriberService {
   def groupJobLevel(): List[GroupJobLevel] = {
     val cache = Cache.get("groupJobLevel")
     if (cache.isDefined) {
-      return cache.asInstanceOf[List[GroupJobLevel]]
+      return cache.get.asInstanceOf[List[GroupJobLevel]]
     }
 
     val db = Database.forConfig("db")
